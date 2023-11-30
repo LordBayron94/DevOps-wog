@@ -1,9 +1,5 @@
 # Created by Dorian at 02/09/2023
 import guess_game, currency_roulette_game, memory_game, score, utils
-import os.path as op, os, platform, random, urllib.request, functools, datetime
-from currency_converter import ECB_URL, CurrencyConverter
-from time import sleep
-from datetime import date
 
 def welcome():
     username = input("Please enter your name here:")
@@ -31,16 +27,16 @@ def start_play():
             print(f'Selected game is: {value}.\n We\'re starting the game....\n')
             #starting the game
             if selected_game == '1':
-                diff = input(f'Enter a non zero difficulty level: ')
-                currency_roulette_game.play(diff)
+                diff = input(f'Max difficulty is 4! Please enter a non zero difficulty: ')
+                memory_game.play(diff)
                 break
             elif selected_game == '2':
                 diff = input(f'Enter a non zero difficulty: ')
                 guess_game.play(diff)
                 break
             elif selected_game == '3':
-                diff = input(f'Max difficulty is 4! Please enter a non zero difficulty: ')
-                memory_game.play(diff)
+                diff = input(f'Enter a non zero difficulty level: ')
+                currency_roulette_game.play(diff)
                 break
             else:
                 break

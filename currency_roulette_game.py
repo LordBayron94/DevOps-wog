@@ -1,8 +1,8 @@
 # Created by Dorian at 25/11/2023
-#from currency_converter import ECB_URL, CurrencyConverter
-#from datetime import date
-#import random, urllib.request
-#import os.path as op
+from currency_converter import ECB_URL, CurrencyConverter
+from datetime import date
+import random, urllib.request
+import os.path as op
 
 c, secret_number, guessed, correct_answ_interval = 0,0,False,None
 

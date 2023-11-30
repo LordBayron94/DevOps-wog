@@ -1,6 +1,6 @@
 # Created by Dorian at 26/11/2023
-#import random, functools,os, utils
-#from time import sleep
+import random, functools,os, utils
+from time import sleep
 
 rand_list, guessed = [], False
 
@@ -36,23 +36,26 @@ def get_list_from_user(dif):
     global user_guess
     print(f'Please enter the integer number between 1 and 101 in order to play the game. Number of elements is {dif}.\n')
     user_guess=[]
-    user_guess = list(int(e) for e in input(f'Separate elements by space: ').strip().split())[:dif]
+    user_guess = list(map(int, input("\nEnter the elemnts of a list : ").strip().split()))[:int(dif)]
     return user_guess
 
 def is_list_equal(rand_list, user_guess):
     global guessed
     #using map and reduce to compare if the user input is the same
     if functools.reduce(lambda x,y : x and y, map(lambda p,q: p==q, rand_list,user_guess), True):
-        guessed = true
+        guessed = True
+        print(f'Comparison result:{guessed}')
         return guessed
     else:
+        print(f'Comparison result:{guessed}')
         return guessed
+
 
 
 def play(dif):
     generate_sequence(dif)
     get_list_from_user(dif)
-    is_list_equal(dif,user_guess)
+    is_list_equal(rand_list,user_guess)
 
     if guessed == True:
         print("CONGRATULATIONS!! You guessed the right amount. YOU WON THE GAME!")

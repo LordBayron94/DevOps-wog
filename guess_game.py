@@ -1,5 +1,5 @@
 # Created by Dorian at 25/11/2023
-#import random
+import random
 guessed, secret_number = False, None
 
 def generate_number(dif):
