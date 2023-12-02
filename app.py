@@ -29,14 +29,20 @@ def start_play():
             if selected_game == '1':
                 diff = input(f'Max difficulty is 4! Please enter a non zero difficulty: ')
                 memory_game.play(diff)
+                if memory_game.guessed is True:
+                    score.add_score(diff)
                 break
             elif selected_game == '2':
                 diff = input(f'Enter a non zero difficulty: ')
                 guess_game.play(diff)
+                if guess_game.guessed is True:
+                    score.add_score(diff)
                 break
             elif selected_game == '3':
                 diff = input(f'Enter a non zero difficulty level: ')
                 currency_roulette_game.play(diff)
+                if currency_roulette_game.guessed is True:
+                    score.add_score(diff)
                 break
             else:
                 break

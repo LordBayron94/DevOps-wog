@@ -5,11 +5,11 @@ import os.path as op, datetime
 app = Flask(__name__)
 
 def get_file():
-    if not op.isfile(f'data/Scores.txt'):
+    if not op.isfile(f'Scores.txt'):
         print('File doesn\'t exist! Creating the new file\n')
         return f'Error'
     else:
-        with open('data/Scores.txt', 'r') as f:
+        with open('Scores.txt', 'r') as f:
             score = f.read().strip
         return score
 
@@ -41,8 +41,9 @@ def score_server():
         </body>
         </html>
         '''
+    return content
 
 if __name__ == '__main__':
     welcome()
     start_play()
-    app.run(debug=True)
+    app.run(debug=False)

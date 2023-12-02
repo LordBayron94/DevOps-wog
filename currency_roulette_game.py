@@ -43,5 +43,7 @@ def play(diff):
 
     if guessed == True:
         print("CONGRATULATIONS!! You guessed the right amount. YOU WON THE GAME!")
+        return guessed
     else:
         print(f'That\'s a wrong guess :(. Correct conversion is: {c}')
+        return guessed

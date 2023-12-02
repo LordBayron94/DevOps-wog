@@ -26,5 +26,7 @@ def play(diff):
 
     if guessed == True:
         print("CONGRATULATIONS!! You guessed the right number. YOU WON THE GAME!")
+        return guessed
     else:
         print(f'That\'s a wrong guess :(. Generated number is: {secret_number}')
+        return guessed
