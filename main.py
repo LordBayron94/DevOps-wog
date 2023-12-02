@@ -1,11 +1,11 @@
-from app import welcome, start_play
+from app import welcome, start_play, utils
 from flask import Flask
 import os.path as op, datetime
 
 app = Flask(__name__)
 
 def get_file():
-    if not op.isfile(f'Scores.txt'):
+    if not op.isfile(utils.SCORES_FILE_NAME):
         print('File doesn\'t exist! Creating the new file\n')
         return f'Error'
     else:

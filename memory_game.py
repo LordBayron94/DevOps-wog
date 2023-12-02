@@ -42,9 +42,12 @@ def get_list_from_user(dif):
 def is_list_equal(rand_list, user_guess):
     global guessed
     #using map and reduce to compare if the user input is the same
-    if functools.reduce(lambda x,y : x and y, map(lambda p,q: p==q, rand_list,user_guess), True):
+    if not user_guess:
+        print('The list is empty!')
+        return guessed
+    elif functools.reduce(lambda x,y : x and y, map(lambda p,q: p==q, rand_list,user_guess), True):
         guessed = True
-        print(f'Comparison result:{guessed}')
+        #print(f'Comparison result:{user_guess}') #- this was for debugging
         return guessed
     else:
         print(f'Comparison result:{guessed}')
