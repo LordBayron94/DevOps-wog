@@ -17,6 +17,6 @@ def add_score(dif):
         #writing the score in the existing file
         print(f'Writing score in {utils.SCORES_FILE_NAME}')
         with open(f'{utils.SCORES_FILE_NAME}', mode='a') as f:
-            f.write(f'Score recorded: {POINTS_OF_WINNING}')
+            f.write(f'Score recorded: {POINTS_OF_WINNING}\n')
             f.close()
 

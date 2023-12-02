@@ -13,11 +13,11 @@ def get_file():
             score = f.read().strip
         return score
 
-@app.route('/WoG')
+@app.route('/score')
 def score_server():
     user_score = get_file()
 
-    if user_score.startswith("Error"):
+    if isinstance(user_score, str) and not user_score.startswith("Error"):
         content = f'''
         <html>
             <head>
@@ -46,4 +46,5 @@ def score_server():
 if __name__ == '__main__':
     welcome()
     start_play()
-    #app.run(debug=False)
+    score_server()
+    app.run(debug=True, port=8000)
