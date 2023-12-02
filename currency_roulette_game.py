@@ -11,11 +11,11 @@ def get_money_interval(diff):
     #generating radnom value for the emount of $
     secret_number = random.randint(0, 100)
 
-    #applying API Currency Converter and downloading raw data for a up-to-date info!
-    filename = f"ecb_{date.today():%Y%m%d}.zip"
-    if not op.isfile(filename):
-        urllib.request.urlretrieve(ECB_URL, filename)
-    curr = CurrencyConverter(filename)
+    #applying API Currency Converter and downloading raw data for a up-to-date info! - this part doesn't work in current version
+    #filename = f"ecb_{date.today():%Y%m%d}.zip"
+    #if not op.isfile(filename):
+    #    urllib.request.urlretrieve(ECB_URL, filename)
+    curr = CurrencyConverter()
     c = curr.convert(secret_number, 'USD', 'ILS')
 
     #calculating correct answer interval
