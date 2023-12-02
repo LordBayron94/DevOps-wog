@@ -3,7 +3,10 @@ import guess_game, currency_roulette_game, memory_game, score, utils
 
 def welcome():
     username = input("Please enter your name here:")
-    print(f'Hello {username} and welcome to the World of Games: The Epic Journey\n')
+    if not username:
+        welcome()
+    else:
+        print(f'Hello {username} and welcome to the World of Games: The Epic Journey\n')
 
 def start_play():
     #define the dictionary of playable games
